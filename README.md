@@ -1,0 +1,1 @@
+This is a full-stack web application built using the MERN stack (MongoDB, Express.js, React, and Node.js). The project uses MongoDB as the database to store and retrieve data, Express.js as the backend framework to handle API requests, React for the frontend to provide a dynamic user interface, and Node.js for the server-side runtime. 
