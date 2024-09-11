@@ -1,0 +1,18 @@
+/* *{
+    background-color: hwb(0, 0%, 100%);
+
+} */
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+ .button{
+    display: block;
+  margin: 20px auto 0 auto; /* Automatically centers the button horizontally */
+  position: relative;   /* Keeps it in the flow below the table */
+  padding: 10px 20px;   /* Adjust button size */
+  font-size: 16px;      /* Adjust text size */
+  top: 0;               /* Adjust as needed to prevent overlap */
+    
+      
+ }

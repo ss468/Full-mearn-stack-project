@@ -1,0 +1,13 @@
+.scheduletable{
+    position: fixed;       
+    left: 50%;             
+    top: 100px;       
+    transform: translateX(-50%);
+}
+
+.rowlength{
+    .your-row-class {
+        height: 100px; 
+      }
+      
+}

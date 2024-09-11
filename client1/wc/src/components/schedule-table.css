@@ -1,0 +1,50 @@
+/* body, html {
+  height: 100%;
+  margin: 0;
+} */
+
+
+.wholetable {
+  width: 80%;              /* Adjust table width as needed */
+  margin: 100px auto 0;     /* Pushes the table down from the top of the page */
+  text-align: center;
+}
+
+
+/* Flexbox container to center the table */
+.table-container {
+    display: flex;
+    justify-content: center; /* Centers the table horizontally */
+    align-items: center; /* Centers the table vertically */
+    min-height: 100vh; /* Makes the container fill the whole viewport height */
+  }
+  
+  /* Increase the table width */
+  .schedule-table {
+    width: 80%; /* Takes up 80% of the container's width */
+    border-collapse: collapse; /* Collapse borders */
+  }
+  
+  /* Set a fixed height for the table rows */
+  .schedule-table tbody tr {
+    height: 50px; /* Adjust this value to increase row height */
+  }
+  
+  /* Add padding to table cells for more spacing */
+  .schedule-table th,
+  .schedule-table td {
+    padding: 15px; /* Increase padding for more space */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add border to table cells */
+  }
+  
+  /* Optional: Set a height for the entire table */
+  .schedule-table {
+    height: auto; /* Adjust the height as needed */
+  }
+  
+  /* Add a background color to the header for styling */
+  .schedule-table th {
+    background-color: #f2f2f2;
+  }
+  
