@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './schedule-table.css';
+import { useNavigate } from "react-router-dom";
 import Updatebutton from "./updatebutton";
 // import PropTypes from 'prop-types';
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const Scheduletable = ({ ondelete,handleShow }) => {
   const [showschedules, setShowschedules] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+  const navigate=useNavigate();
 
   useEffect(() => {
     axios
@@ -26,6 +29,9 @@ const Scheduletable = ({ ondelete,handleShow }) => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this schedule?")) {
       ondelete(id);
+    }
+    else{
+       navigate("/home");
     }
   };
 

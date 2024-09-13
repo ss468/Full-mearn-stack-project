@@ -2,6 +2,8 @@ import axios from "axios";
 // import { useNavigate } from 'react-router-dom';
 import Scheduletable from "./scheduletable";
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const Delete = ({handleShow}) => {
   // const navigate = useNavigate();
 
@@ -10,12 +12,12 @@ const Delete = ({handleShow}) => {
     axios
       .delete(`http://localhost:8000/home/${id}`)
       .then(() => {
-        alert("Schedule deleted successfully!");
+        toast.success("Schedule deleted successfully!");
         // navigate("/");
       })
       .catch((error) => {
         console.error("Error deleting schedule:", error);
-        alert('An error occurred while deleting the schedule.');
+        toast.error('An error occurred while deleting the schedule.');
       });
   };
  
@@ -24,6 +26,7 @@ const Delete = ({handleShow}) => {
     <>
       {/* <Scheduletable ondelete={ondelete}></Scheduletable> */}
       <Scheduletable ondelete={ondelete} handleShow={handleShow} />
+      <ToastContainer/>
     </>
   );
 };

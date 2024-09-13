@@ -1,53 +1,50 @@
-import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, Modal } from 'react-bootstrap';
-import Addbutton from './Addbutton';
-import axios from 'axios';
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, Modal } from "react-bootstrap";
+
+import { useEffect } from "react";
+import Addbutton from "./Addbutton";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 // import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 // import Modal from 'react-bootstrap/Modal';
 
 function Modalwc() {
   const [show, setShow] = useState(false);
-  const [day,Setday]=useState("");
-  const [mode,Setmode]=useState("");
-  const [time,Settime]=useState("");
-
-
+  const [day, Setday] = useState("");
+  const [mode, Setmode] = useState("");
+  const [time, Settime] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
 
-  const handleSaveBook=()=>{
+  const handleSaveBook = () => {
     const data = {
-        day,
-        mode,
-        time,
-      };
-      
+      day,
+      mode,
+      time,
+    };
 
+    
       axios
-      .post('http://localhost:8000/washingmac', data)
-      .then(() => {
-        alert("BOOKED SUCCESSFULLY!!!!");
-        setShow(false);
-      })
-      .catch((error) => {
-        
-        alert("ERROR IN BOOKING SCHEDULE!!!");
-        console.log(error);
-        
-        
-      });
-  };
-
+        .post("http://localhost:8000/washingmac", data)
+        .then(() => {
+         toast.success("BOOKED SUCCESSFULLY!!!!");
+          setShow(false);
+        })
+        .catch((error) => {
+          toast.error("ERROR IN BOOKING SCHEDULE!!!");
+          console.log(error);
+        });
   
+  };
 
   return (
     <>
       {/* <Button  onClick={handleShow}> */}
-        <Addbutton handleShow={handleShow}/>
+      <Addbutton handleShow={handleShow} />
       {/* </Button> */}
 
       <Modal show={show} onHide={handleClose}>
@@ -101,6 +98,7 @@ function Modalwc() {
           </Button>
         </Modal.Footer>
       </Modal>
+      <ToastContainer/>
     </>
   );
 }

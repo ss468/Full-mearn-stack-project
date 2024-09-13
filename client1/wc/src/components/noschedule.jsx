@@ -4,8 +4,8 @@ const Noschedule=()=>{
     <>
     <div className={styles.noschedule}>
         
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-           <strong>NO SCHEDULES!</strong> There are No schedules,you can add below.
+        <div className="alert alert-warning alert-dismissible fade show" role="alert">
+           <strong>NO SCHEDULES!</strong> There are No schedules,you can add Schedule on tapping `Add new schedule`.
            
         </div>
         

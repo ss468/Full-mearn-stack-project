@@ -7,6 +7,10 @@ import Updatebutton from './updatebutton';
 import Scheduletable from './scheduletable';
 import axios from 'axios';
 
+
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from 'react-router-dom';
 import Delete from './Delete';
 
@@ -36,13 +40,13 @@ function Update() {
     axios.put(`http://localhost:8000/home/${id}`,data)
     .then(
         ()=>{
-            alert("SCHEDULE UPDATED SUCCESSFULLY!!!!");
+            toast.success("SCHEDULE UPDATED SUCCESSFULLY!!!!");
             setShow(false);
         }
     )
     .catch((error)=>{
         console.log(error);
-        alert("ERROR IN UPDATING SCHEDULE!!!");
+        toast.error("ERROR IN UPDATING SCHEDULE!!!");
     });
  };
 
@@ -100,6 +104,7 @@ function Update() {
           </Button>
         </Modal.Footer>
       </Modal>
+      <ToastContainer/>
     </>
   );
 }
